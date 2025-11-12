@@ -15,6 +15,7 @@
   html {
     font-family: var(--font-sans);
     font-feature-settings: "rlig" 1, "calt" 1;
+    scroll-behavior: smooth;
   }
 
   body {
@@ -43,4 +44,16 @@
     --tw-exit-translate-x: initial;
     --tw-exit-translate-y: initial;
   }
+
+  /* Soft ambient pulses used in the hero */
+  @keyframes pulseSlow {
+    0%, 100% { transform: scale(1); opacity: 0.7; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+  }
+  @keyframes pulseSlower {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.08); opacity: 0.85; }
+  }
+  .animate-pulse-slow { animation: pulseSlow 6s ease-in-out infinite; }
+  .animate-pulse-slower { animation: pulseSlower 9s ease-in-out infinite; }
 }

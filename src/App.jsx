@@ -2,6 +2,7 @@ import React from 'react'
 import Hero from './components/Hero'
 import Agenda from './components/Agenda'
 import Slide from './components/Slide'
+import { motion } from 'framer-motion'
 
 function App() {
   return (
@@ -79,12 +80,34 @@ function App() {
 
         <section className="bg-gradient-to-b from-white to-rose-50 px-6">
           <div className="max-w-6xl mx-auto py-16 md:py-24 text-center">
-            <h3 className="text-3xl md:text-4xl font-bold">Thank you</h3>
-            <p className="mt-3 text-gray-600">Questions? Let’s discuss opportunities and next steps.</p>
-            <div className="mt-6 flex justify-center gap-3">
-              <a href="#" className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-5 py-3 rounded-lg shadow transition-colors">Get in touch</a>
-              <a href="#" className="inline-flex items-center gap-2 bg-white text-gray-700 hover:text-gray-900 border border-gray-200 px-5 py-3 rounded-lg shadow-sm">Download deck</a>
-            </div>
+            <motion.h3
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-3xl md:text-4xl font-bold"
+            >
+              Thank you
+            </motion.h3>
+            <motion.p
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mt-3 text-gray-600"
+            >
+              Questions? Let’s discuss opportunities and next steps.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15 }}
+              className="mt-6 flex justify-center gap-3"
+            >
+              <a href="#" className="inline-flex items-center gap-2 bg-rose-600 hover:bg-rose-700 text-white px-5 py-3 rounded-lg shadow transition-colors will-change-transform hover:scale-[1.02] active:scale-[0.99]">Get in touch</a>
+              <a href="#" className="inline-flex items-center gap-2 bg-white text-gray-700 hover:text-gray-900 border border-gray-200 px-5 py-3 rounded-lg shadow-sm hover:shadow will-change-transform hover:scale-[1.02] active:scale-[0.99]">Download deck</a>
+            </motion.div>
           </div>
         </section>
       </div>
